@@ -6,7 +6,7 @@
 data_url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 
 #Download data and unzip
-dest_file_path = "./project_data.zip"
+dest_file_path <- "./project_data.zip"
 download.file(data_url, destfile =dest_file_path)
 unzip(dest_file_path)
 
@@ -53,7 +53,7 @@ data <- join(data, activity_labels, by = "activity_id")
 data$activity_id <- NULL
 
 #Create new dataframe with means of the features
-data_means = ddply(data, c("subject_id","activity_name"), numcolwise(mean))
+data_means <- ddply(data, c("subject_id","activity_name"), numcolwise(mean))
 
 write.table(data,"dataset_detailed.txt", row.name=FALSE)
 write.table(data_means,"dataset_average.txt", row.name=FALSE)
