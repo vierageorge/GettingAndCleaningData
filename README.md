@@ -74,3 +74,5 @@ data_means <- ddply(data, c("subject_id","activity_name"), numcolwise(mean))
 write.table(data,"dataset_detailed.txt", row.name=FALSE)
 write.table(data_means,"dataset_average.txt", row.name=FALSE)
 ```
+
+**dataset_detailed.txt** file will contain the data requested to be subitted.
